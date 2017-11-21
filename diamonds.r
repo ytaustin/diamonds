@@ -1,3 +1,4 @@
+load("diamond")
 library(tidyverse)
 library(modelr)
 options(na.action = na.warn)
@@ -62,7 +63,7 @@ ggplot(data = diamonds2)+
 ggsave("smooth_lprice_compare.jpg")
 
 ggplot(data = diamonds2)+
-  geom_line(mapping = aes(x=price, y=pred_price))+
+  geom_smooth(mapping = aes(x=pred_price, y=price))
 ggsave("pred_true_compare.jpg")
 
 
